@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vishwadhar Kyatham | AI & ML Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-hover: #1f2937;
+      --border: #1f2937;
+      --text: #f9fafb;
+      --text-muted: #9ca3af;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 50px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(34, 197, 94, 0.1);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      margin-bottom: 16px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .role {
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .bio {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      max-width: 680px;
+      margin-bottom: 24px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--card-bg);
+    }
+
+    .btn:hover {
+      background: var(--card-hover);
+      border-color: #374151;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0b0f19;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      background: var(--accent);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Project Cards */
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s ease;
+    }
+
+    .project-card:hover {
+      border-color: #374151;
+    }
+
+    .project-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 16px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      background: var(--accent-glow);
+      color: var(--accent);
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 14px;
+    }
+
+    .project-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .project-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .skill-category {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 8px;
+    }
+
+    .skill-category h4 {
+      font-size: 0.88rem;
+      color: var(--accent);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .skill-category p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Education */
+    .edu-item {
+      margin-bottom: 14px;
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .edu-sub {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header Section -->
+    <header>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        Available for AI / ML roles in the UK
+      </div>
+      <h1>Vishwadhar Kyatham</h1>
+      <p class="role">AI & Machine Learning Engineer | London, UK</p>
+      <p class="bio">
+        Artificial Intelligence postgraduate with hands-on experience in applied machine learning, 
+        natural language processing, and chatbot systems. Focused on building deployable, 
+        interpretable, and production-ready deep learning models.
+      </p>
+
+      <div class="links">
+        <a href="mailto:vishwadharkyatham@gmail.com" class="btn btn-primary">✉️ Email Me</a>
+        <a href="https://linkedin.com/in/vishwadhar-kyatham-28a475320" target="_blank" class="btn">LinkedIn</a>
+        <a href="https://github.com/Vishwadhar0000" target="_blank" class="btn">GitHub</a>
+      </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section>
+      <h2>Featured Projects</h2>
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <h3>Fake News Detection Using NLP</h3>
+        <p class="project-desc">
+          Built an end-to-end text classification pipeline using a dataset of 44,000+ multi-source articles. Evaluated CNN and LSTM architectures—achieving over 99% accuracy with CNN—and explored BERT models for contextual comprehension. Integrated SHAP and attention visualization for model explainability.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">TensorFlow / Keras</span>
+          <span class="tag">BERT</span>
+          <span class="tag">SHAP</span>
+          <span class="tag">Word2Vec</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Vishwadhar0000" target="_blank">View Code &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <h3>AI Chatbot Development</h3>
+        <p class="project-desc">
+          Engineered an AI-powered conversational chatbot with intent classification, contextual vectorization, and custom fallback handling for out-of-vocabulary inputs. Deployed using Streamlit with an emphasis on low latency, clean UI, and resilience against edge-case queries.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">spaCy</span>
+          <span class="tag">NLTK</span>
+          <span class="tag">Text Vectorization</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Vishwadhar0000" target="_blank">View Code &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <h3>Click Fraud Detection for Mobile Applications</h3>
+        <p class="project-desc">
+          Designed a lightweight client-side machine learning architecture to intercept click fraud and bot-driven traffic in real time. Optimized the inference pipeline for resource-constrained mobile environments without relying on continuous server calls.
+        </p>
+        <div class="project-tags">
+          <span class="tag">scikit-learn</span>
+          <span class="tag">Edge ML</span>
+          <span class="tag">Anomaly Detection</span>
+          <span class="tag">Mobile Security</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Vishwadhar0000" target="_blank">View Code &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section>
+      <h2>Technical Stack</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Languages & Core</h4>
+          <p>Python, NumPy, Pandas, Data Cleaning, Feature Engineering</p>
+        </div>
+        <div class="skill-category">
+          <h4>Machine & Deep Learning</h4>
+          <p>scikit-learn, TensorFlow, Keras, CNN, LSTM, RNN, Transformers</p>
+        </div>
+        <div class="skill-category">
+          <h4>Natural Language Processing</h4>
+          <p>BERT, TF-IDF, Word2Vec, spaCy, NLTK, Tokenization, Embeddings</p>
+        </div>
+        <div class="skill-category">
+          <h4>Tools & Deployment</h4>
+          <p>Streamlit, Flask (basic), Git, Google Colab, Jupyter Notebook</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section>
+      <h2>Education & Credentials</h2>
+      <div class="edu-item">
+        <div class="edu-header">
+          <span>MSc Artificial Intelligence</span>
+          <span>2024 – 2026</span>
+        </div>
+        <div class="edu-sub">University of East London, UK (Modules: ML, Deep Learning, NLP, AI Ethics)</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-header">
+          <span>B.Tech in Computer Science & Engineering</span>
+          <span>2018 – 2022</span>
+        </div>
+        <div class="edu-sub">Narsimha Reddy Engineering College, India</div>
+      </div>
+
+      <div class="edu-item" style="margin-top: 18px;">
+        <div class="edu-header">
+          <span>Certifications</span>
+        </div>
+        <div class="edu-sub">
+          Generative AI (LinkedIn Learning) • NLP & Intro to AI (Great Learning) • Mathematical Foundations of ML (Udemy)
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Vishwadhar Kyatham • London, UK • Eligible to work in the UK</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
